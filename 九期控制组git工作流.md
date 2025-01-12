@@ -18,15 +18,15 @@
 HTTPS: https://github.com/KetenBieber/General_Framework.git
 SSH: git@github.com:KetenBieber/General_Framework.git
 然后点击fork，将项目仓库fork到你自己的仓库中
-![alt text](九期控制组git工作流.assets/new-1.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-1.png)
 
 
 会是这个画面
-![alt text](九期控制组git工作流.assets/new-2.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-2.png)
 
 
 然后
-![alt text](九期控制组git工作流.assets/new-3.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-3.png)
 
 
 clone下来到刚刚创建的文件夹中
@@ -35,7 +35,7 @@ clone下来到刚刚创建的文件夹中
 ```bash
 git branch # 查看当前本地分支
 ```
-![alt text](九期控制组git工作流.assets/new-4.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-4.png)
 
 
 可以看到我的本地分支是这些
@@ -46,7 +46,7 @@ Keten、Bieber、Justin
 ```bash
 git remote -v
 ```
-![alt text](九期控制组git工作流.assets/new-5.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-5.png)
 
 
 这时可以看到我们已经链接上了我们fork到自己账户下的远程仓库
@@ -55,27 +55,27 @@ git remote -v
 git remote add upstream https://github.com/KetenBieber/General_Framework.git
 ```
 再次查看链接关系
-![alt text](九期控制组git工作流.assets/new-6.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-6.png)
 
 
 可以发现新增了两个upstream（上游仓库）
 这样就可以跟踪到远程仓库的更新
 
 然后开始创建你的本地分支：
-![alt text](九期控制组git工作流.assets/new-7.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-7.png)
 
 
 使用上述命令创建分支
 *删除分支（注意不能在你要删除的分支下使用该命令），使用git branch -d 分支名*
-![alt text](九期控制组git工作流.assets/new-10.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-10.png)
 
 
 *重命名分支，跳转到你要改名的分支下，使用git branch -m 新分支名*
-![alt text](九期控制组git工作流.assets/new-9.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-9.png)
 
 
 使用git checkout进行分支的切换
-![alt text](九期控制组git工作流.assets/new-8.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-8.png)
 
 
 然后使用该指令，将本地分支推送到你远程仓库中（fork下来的）
@@ -83,26 +83,26 @@ git remote add upstream https://github.com/KetenBieber/General_Framework.git
 git push origin fzh:fzh # 将fzh推送到远程，并且命名为fzh
 ```
 这时看到侧栏
-![alt text](九期控制组git工作流.assets/new-13.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-13.png)
 
 
-![alt text](九期控制组git工作流.assets/new-12.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-12.png)
 
 
-![alt text](九期控制组git工作流.assets/new-11.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-11.png)
 
 
 以后的工作中，假如你写了新代码，想要更新自己的到自己的远程分支，并且想要获取远程主分支的代码更新
 如果一键同步，那会导致你的更改被丢失，所以一般你所作了更改，可以在下面进行暂存
-![alt text](九期控制组git工作流.assets/new-14.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-14.png)
 
 
 这时再回去，选择Fetch，获取远程主仓库的最新更新
-![alt text](九期控制组git工作流.assets/new-15.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-15.png)
 
 
 然后选择下面这项：
-![alt text](九期控制组git工作流.assets/new-16.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-16.png)
 
 
 然后这时如果你本地的修改有和远程相冲突的部分（
@@ -112,7 +112,7 @@ git push origin fzh:fzh # 将fzh推送到远程，并且命名为fzh
 然后回去重新提交就可以了
 这时你们的所有修改其实都是被自己所知，那么如何做可以让跟踪的远程主分支知道你修改了哪些部分，修改了哪些bug呢？
 使用Pull Request
-![alt text](九期控制组git工作流.assets/new-17.png#pic_center)
+![alt text](九期控制组git工作流.assets/new-17.png)
 
 
 
