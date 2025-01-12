@@ -9,6 +9,81 @@
   另外非常推荐的 copliot （强大的ai，可以帮助你更好的瞎折腾，下面有哪一步没成功也可以问，和一些原理，当然也可以直接把步骤记住，无需深究其工作流程）
 
 ## 2.开始操作
+*2025年1月12号再次更新，最简版使用指南，就看2.0*
+### 2.0 最简上手
+*该指南建立在你已经完成了注册操作，并且之前已经做过简单的clone操作*
+在不含中文路径的目录中新建一个文件夹，然后打开Git Bash
+
+接着进入我们的项目仓库：
+HTTPS: https://github.com/KetenBieber/General_Framework.git
+SSH: git@github.com:KetenBieber/General_Framework.git
+然后点击fork，将项目仓库fork到你自己的仓库中
+![alt text](九期控制组git工作流.assets/new-1.png)
+会是这个画面
+![alt text](九期控制组git工作流.assets/new-2.png)
+然后
+![alt text](九期控制组git工作流.assets/new-3.png)
+clone下来到刚刚创建的文件夹中
+然后在vscode中打开工程
+然后打开vscode中的终端（Git Bash或者直接用刚刚clone使用的终端）
+```bash
+git branch # 查看当前本地分支
+```
+![alt text](九期控制组git工作流.assets/new-4.png)
+可以看到我的本地分支是这些
+Keten、Bieber、Justin
+然后Keten前带一个 * 号，表示当前所在分支
+这时我们来查看链接关系：
+终端输入
+```bash
+git remote -v
+```
+![alt text](九期控制组git工作流.assets/new-5.png)
+这时可以看到我们已经链接上了我们fork到自己账户下的远程仓库
+但是我们要跟踪主仓库的更新，就需要链接到远程主仓库
+```bash
+git remote add upstream https://github.com/KetenBieber/General_Framework.git
+```
+再次查看链接关系
+![alt text](九期控制组git工作流.assets/new-6.png)
+可以发现新增了两个upstream（上游仓库）
+这样就可以跟踪到远程仓库的更新
+
+然后开始创建你的本地分支：
+![alt text](九期控制组git工作流.assets/new-7.png)
+使用上述命令创建分支
+*删除分支（注意不能在你要删除的分支下使用该命令），使用git branch -d 分支名*
+![alt text](九期控制组git工作流.assets/new-10.png)
+*重命名分支，跳转到你要改名的分支下，使用git branch -m 新分支名*
+![alt text](九期控制组git工作流.assets/new-9.png)
+使用git checkout进行分支的切换
+![alt text](九期控制组git工作流.assets/new-8.png)
+然后使用该指令，将本地分支推送到你远程仓库中（fork下来的）
+```bash
+git push origin fzh:fzh # 将fzh推送到远程，并且命名为fzh
+```
+这时看到侧栏
+![alt text](九期控制组git工作流.assets/new-13.png)
+![alt text](九期控制组git工作流.assets/new-12.png)
+![alt text](九期控制组git工作流.assets/new-11.png)
+以后的工作中，假如你写了新代码，想要更新自己的到自己的远程分支，并且想要获取远程主分支的代码更新
+如果一键同步，那会导致你的更改被丢失，所以一般你所作了更改，可以在下面进行暂存
+![alt text](九期控制组git工作流.assets/new-14.png)
+这时再回去，选择Fetch，获取远程主仓库的最新更新
+![alt text](九期控制组git工作流.assets/new-15.png)
+然后选择下面这项：
+![alt text](九期控制组git工作流.assets/new-16.png)
+然后这时如果你本地的修改有和远程相冲突的部分（
+冲突：
+例如同一行代码被修改，那也可知：添加新的东西是不会被认为是冲突的）
+若有冲突，那么vscode会打开合并编辑器，根据你自己的工程，选择保留本地修改or接受远程修改
+然后回去重新提交就可以了
+这时你们的所有修改其实都是被自己所知，那么如何做可以让跟踪的远程主分支知道你修改了哪些部分，修改了哪些bug呢？
+使用Pull Request
+![alt text](九期控制组git工作流.assets/new-17.png)
+
+这时，会将你修改的部分发送到项目拥有者的邮箱，这时仓库主人就可以选择接纳or拒绝你的合并请求
+
 
 ### 2.1 确认工作
 
@@ -432,7 +507,7 @@ gitlens 便捷的可视化：
 
 <img src="九期控制组git工作流.assets/image-20240913191854716.png" alt="image-20240913191854716" style="zoom:50%;" />
 
-这样可以实现更灵活的操作：==**手动解决冲突**==
+这样可以实现更灵活的操作：==手动解决冲突==
 
 ![image-20240913191908746](九期控制组git工作流.assets/image-20240913191908746.png)
 
